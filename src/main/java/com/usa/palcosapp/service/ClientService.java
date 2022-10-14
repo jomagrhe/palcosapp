@@ -36,7 +36,7 @@ public class ClientService {
     public Client update (Client client){
         if (client.getIdClient()!=null){
             Optional<Client> optional=clientRepository.getById(client.getIdClient());
-            if (optional.isEmpty()){
+            if (!optional.isEmpty()){
                 if(client.getName()!=null){
                     optional.get().setName(client.getName());;
                 }
